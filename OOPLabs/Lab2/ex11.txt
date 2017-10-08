@@ -1,0 +1,13 @@
+variable x = (expression) ? value if true : value if false
+
+3 > 2 ? false : true - ans: false 
+3 < 2 ? false : true - ans: true
+
+x=3.0 > 3.5 ? ++x : x++ - ans: x++
+
+x=3.0
+true & ++x > 3.5 - true 
+false & ++x > 3.5 - false
+true | ++x > 3.5 - true
+false | ++x > 3 - false
+
