@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Ass1{
 
+	public static final String ANSI_RESET = "\u001B[0m";
+	public static final String[] COLOURS = {"\u001B[30m","\u001B[31m", "\u001B[32m", "\u001B[33m", "\u001B[34m", "\u001B[35m", "\u001B[36m", "\u001B[37m"};
+
 	private static void printLettersAtTheBottom(){
 		for(int k = 0; k < 26; k++){
 				System.out.print((char)(k + 65) + " | ");
@@ -12,13 +15,14 @@ public class Ass1{
 
 	private static void printHistogram(int mostEcounteredLetter, int[] counters){
 		for(int j = mostEcounteredLetter; j > 0; j--){
+			System.out.print(COLOURS[(int)(Math.random() * 8)]);
 			for(int k = 0; k < 26; k++){
 				if(counters[k] >= j)
 					System.out.print("* | ");
 				else
 					System.out.print("  | ");
 			}
-			System.out.println(j);
+			System.out.println(j + ANSI_RESET);
 		}		
 	}
 
